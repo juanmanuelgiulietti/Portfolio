@@ -1,0 +1,221 @@
+/* REGLAS GENERALES */
+
+:root {
+    --color_primario: #096abf;
+    --color_blanco: #fff;
+    --color_terciario: #000000;
+    --altura_header: 100px;
+    --padding_left_right: 2rem;
+    --ancho_maximo: 1200px;
+    --espacio_letras: 1.2px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: var(--espacio_letras);
+    font-family: 'Monserrat', sans-serif;
+}
+body{
+    background-color: var(--color_blanco);
+}
+a{
+    text-decoration: none;
+}
+ol,ul{
+    list-style: none;
+}
+
+/* CSS HEADER RESPONSIVE */
+
+.header {
+    height: var(--altura_header);
+    background-color: var(--color_primario);
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.perfil img{
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
+.navegacion {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 var(--padding_left_right);
+}
+.menu_hamburguesa{
+    display: none;
+}
+.menu_hamburguesa:checked + .ul_links {
+    height: calc(100vh - var(--altura_header));
+}
+.logo {
+    color: var(--color_blanco);
+}
+.list_icon {
+    color: var(--color_blanco);
+    cursor: pointer;
+}
+.ul_links {
+    width: 100%;
+    position: absolute;
+    top: var(--altura_header);
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    /* height: calc(100vh - var(--altura_header)); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    transition: all .3s;
+}
+.link{
+    font-size: 2em;
+    color: var(--color_blanco);
+}
+.btn{
+    padding: 5px 8px;
+    border: none;
+    border-radius: 3px;
+    color: var(--color_terciario);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* CSS MAIN RESPONSIVE */
+
+main{
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 5rem 2rem;
+}
+.descripcion{
+    width: 700px;
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid var(--color_terciario);
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px var(--color_terciario);
+}
+.descripcion h1{
+    text-align: center;
+    color: var(--color_terciario);
+    margin-bottom: 1rem;
+    font-size: 26px;
+}
+.descripcion p{
+    text-align: justify;
+    color: var(--color_terciario);
+}
+
+/* CSS FOOTER RESPONSIVE */
+
+footer{
+    height: 120px;
+    text-align: center;
+    margin-top: 2rem;
+}
+.contactame p{
+    color: var(--color_terciario);
+    margin: 1rem 0;
+    text-decoration: underline;
+}
+.medios_de_contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.item p, .item p a{
+    color:  var(--color_terciario);
+    font-size: 14px;
+    text-decoration: none;
+}
+.item i{
+    font-size: 20px;
+    color: var(--color_terciario);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width:769px){
+    /* MEDIA QUERIES HEADER */
+
+    .perfil{
+        gap: 0.3rem;
+        font-size: 10px;
+    }
+    .perfil img{
+        width: 60px;
+        height: 60px;
+    }
+    .navegacion{
+        padding: 0 1rem;
+    }
+    .ul_links{
+        background-color: #096abf;
+        gap: 2rem;
+    }
+    .link{
+        font-size: 1.2rem;
+    }
+
+    /* MEDIA QUERIES MAIN */
+
+    main{
+        margin-top: 2rem;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+    .banner, .descripcion{
+        max-width: 100%;
+    }
+    .banner img{
+        width: 100%;
+    }
+    
+    /* MEDIA QUERIES FOOTER */
+
+    .medios_de_contacto{
+        flex-direction: column;
+    }
+    }
+    
+
+@media (min-width:769px){
+
+    /* CSS HEADER */
+    
+    .labe_hamburguesa {
+        display: none;
+    }
+    .ul_links{
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .link{
+        font-size: 1.2rem;
+        padding: .2rem .7rem;
+    }
+}
